@@ -1,0 +1,97 @@
+//1:! tab
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       body{
+    lg(left, #fff 50%, #000)    
+   }
+    </style>
+</head>
+<body>
+    //2:id(#) , class(.)
+    //div#test
+    <div id="test"></div>
+    //div.test
+    <div class="test"></div>
+
+    //3:子节点(>),兄弟节点(+),上级节点(^)
+
+    //div>ul>li>p
+    <div>
+        <ul>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+    </div>
+    //div+ul+p
+    <div></div>
+    <ul></ul>
+    <p></p>
+    //div>ul>li^div
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+        <div></div>
+    </div>
+
+    //4:重复(*)
+
+    //div*3
+    <div></div>
+    <div></div>
+    <div></div>
+
+    //5:分组(())
+    //div>(ul>li>a)+div>p 括号里面的内容为一个代码块，表示与括号内部嵌套和外面的的层级无关
+    <div>
+        <ul>
+            <li><a href=""></a></li>
+        </ul>
+        <div>
+            <p></p>
+        </div>
+    </div>
+   //6：属性（[attr]）
+   //a[href='#' name='hello']
+   <a href="#" name="hello"></a>
+   //一个$ 代表一位数
+   ul>li.test$*3 
+   <ul>
+       <li class="test1"></li>
+       <li class="test2"></li>
+       <li class="test3"></li>
+   </ul> 
+   //如果想自定义从几开始递增的话就利用：$@+数字数字
+   ul>li.test$@3*5
+   <ul>
+       <li class="test3"></li>
+       <li class="test4"></li>
+       <li class="test5"></li>
+       <li class="test6"></li>
+       <li class="test7"></li>
+   </ul>
+
+   //ul>li.test$*3{hh$}
+   //ul>li.test${hello}*3
+   //ul>li.test${hello$}*3
+    <ul>
+        <li class="test1">hello</li>
+        <li class="test2">hello</li>
+        <li class="test3">hello</li>
+    </ul>
+   <ul>
+       <li class="test1">hh1</li>
+       <li class="test2">hh2</li>
+       <li class="test3">hh3</li>
+   </ul>
+   //8：隐式标签  这个标签没有指令，而是部分标签可以不使用输入标签，直接输入指令，即可识别父类标签
+   
+</body>
+</html>
