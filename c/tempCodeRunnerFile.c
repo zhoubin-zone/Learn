@@ -1,0 +1,3 @@
+int getNextValue(){
+      return rand();
+  }

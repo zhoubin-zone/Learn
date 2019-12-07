@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            counter-increment: my;
+        }
+        h1::before{
+            content: counter(my)'-';
+        }
+    h1::after{
+        content:"h1 content"
+    }
+    h2::before{
+        content:open-quote;
+    }
+    h2::after{
+        content: close-quote;
+    }
+    h3{
+        quotes:"\"" "\"";  
+    }
+    a::after{
+        content:attr(href)
+    }
+    </style>
+</head>
+<body>
+    <h1>this is h1</h1>
+    <h2>this is h2</h2>
+    <h3>this is h3</h3>
+    
+<a href="http:///www.ido321.com">这是链接</a>
+</body>
+</html>
