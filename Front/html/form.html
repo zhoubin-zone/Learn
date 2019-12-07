@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+
+            outline: none;
+            /* background-image: url(../img/searchicon.png);
+            background-repeat: no-repeat;
+            background-position:10px 10px; */
+        }
+
+        #icon {
+            background-image: url(../img/searchicon.png);
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px; 
+            transition: width 0.4s ease-in-out;
+        }
+        #icon:hover{
+            width: 100%;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        input[type=text]:focus {
+            background-color: #45a049;
+        }
+
+        div {
+            align-content: center;
+            width: 50%;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        select{
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: aqua;
+        }
+        input[type=button],input[type=submit]{
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="test.jsp">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname">
+            <label for="country"></label>
+            <select name="country" id="country">
+                <option value="australia" valur="">Australia</option>
+                <option value="canada" valur="">canada</option>
+                <option value="usq" valur="">USA</option>
+            </select>
+            <input type="text" id="icon">
+            <br>
+            <textarea name="textarea" id="" cols="30" rows="10" style="resize: none;"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
