@@ -16,3 +16,52 @@ visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未
 display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
 
 textarea:使用 resize 属性来禁用文本框可以重置大小的功能（一般拖动右下脚可以重置大小）
+
+position 绝对定位可调整距各边框位置 (absolute)
+        fixed 页面滑动任然保持位置不变
+
+多类选择器  <div class=“p1 p2”>
+            .p1{} .p2{}
+            .p1.p2{}  同时拥有这三个效果
+:root
+:empty
+:not
+:target  配合a标签    跳转到哪个 对哪个进行样式设定   
+
+:before{
+        content:"";
+}
+li:nth_last-child(odd){ }
+li:nth-child(an+b)
+h1:nth-of-type(even){}
+text-shodow 可以指定多个阴影
+
+inline :无法设置宽度  可以使用inline-block
+inline-table
+
+box-shadow  盒子阴影
+box-sizing  盒子宽高是否包含在其中   content-box  
+border-image
+                        <picture>
+				<source media="(max-width:480px)" srcset="img/480x320.gif">
+				<source media="(max-width:640px)" srcset="img/640x427.gif">
+				<source media="(max-width:720px)" srcset="img/720x480.gif">
+				<source media="(max-width:900px)" srcset="img/900x600.gif">
+				<img src="img/900x600.gif" alt="" />
+			</picture>
+<img sizes="(min-width:900px) 900px, 100vw"
+				 srcset="img/480x320.gif 480w,
+				         img/640x427.gif 640w,
+				         img/720x480.gif 720w,
+				         img/900x600.gif 900w"
+				 src="img/480x320.gif" alt="responsive images" />
+
+                                 flex-direction: row;
+
+                         flex: 1 1 100%;     
+
+.cf:after，.cf:before {content: " "; display: table;}
+.cf:after {clear: both;}
+：before是因为table类型能生成独立的bfc，防止上边距塌陷，
+：after负责清除浮动，防止父级高度塌陷；配合使用，代码少，效率高。
+     

@@ -1,0 +1,29 @@
+history.go()
+location.assign() 加载页面
+window.open() 可以设置打开页面的一些属性
+(function(){
+
+var n=";
+function People(name){
+
+}
+window.People=People;
+}());
+
+jquery
+$(document).ready(function()){}
+标签内容获取
+html（）获取带标签
+text（）获取 但不带标签
+
+input内容获取
+val() 
+
+empty（）删除子元素
+remove（）全部删除
+
+$("#btn").text(function(i,ot){
+        return "old:"+ot+"new:this is new centent"+(i);
+})
+$("body").load("box.htm")
+$.getScript("hello.js).complete(function(){})

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul,li{
+     list-style-type: none;
+    }
+    ul{
+    padding: 0;
+    margin: 0;
+    }
+    .main{
+        background-image: url(../img/back.jpg);
+        background-repeat: repeat-x;
+        width: 100px;
+    }
+    .hmain{
+        background-image: url(../img/back.jpg);
+        background-repeat: repeat-x;
+        width: 100px;
+        float: left;
+    }
+    li{
+        background-color: #eeeeee;
+    }
+    a{
+        text-decoration: none;
+        padding-left: 20px;
+        display: block;
+        width: 80px;
+        padding-top: 3px;
+    }
+    .main a{
+        color:white;
+
+    }
+    .main li a{
+        color: black;
+        background-image: none;
+    }
+    .main ul{
+        display: none;
+    }
+
+    .hmain a{
+        color:white;
+
+    }
+    .hmain li a{
+        color: black;
+        background-image: none;
+    }
+    .hmain ul{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="main">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+        <li class="main">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+        <li class="main">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <ul>
+        <li class="hmain">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+        <li class="hmain">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+        <li class="hmain">
+            <a href="#">test</a>
+            <ul>
+                <li><a href="#">test1</a></li>
+                <li><a href="#">test2</a></li>
+                <li><a href="#">test3</a></li>
+
+            </ul>
+        </li>
+    </ul>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $(".main>a").click(function(){
+       var node = $(this).next("ul");
+       node.slideToggle();
+       changeIcon($(this));
+    })
+    $(".hmain").hover(function(){
+      $(this).children("ul").slideDown();
+       
+    },function(){
+        $(this).children("ul").slideUp();
+    })
+
+})
+
+function changeIcon(mainnode){
+    if(miannode){
+        if(mainnode.css("background-image").indesOf("collapse.gif")>=0){
+            mainnode.css("background-image","url('img/expendde.gig')");
+        }else{
+            mainnode.css("background-image","url('img/collapse.gif')");
+        }
+    }
+}
+</script>
+</html>

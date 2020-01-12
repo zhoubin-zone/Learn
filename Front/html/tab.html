@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        float: left;
+        background-color: #868686;
+        color: #ffffff;
+        padding: 5px;
+        margin-right: 2px;
+        border: 1px solid #ffffff;
+    }
+    .tabin{
+        background-color:#6e6e6e ;
+        border: 1px solid #6e6e6e ;
+    }
+    .first{
+        clear: both;
+        background-color: #6e6e6e;
+        width: 300px;
+        height: 100px;
+        padding: 10px;
+        display: none;
+    }
+    .content{
+        
+        display: block;
+        
+    }
+    #tabsecond li{
+        float: left;
+        background-color: #ffffff;
+        color: blue;
+        padding: 10px;
+        margin-right: 2px;
+        cursor: pointer;
+    }
+    #tabsecond li.tabin{
+        background-color: #f2f6f8;
+        border: 1px solid #000000;
+        border-bottom: 0px;
+        z-index: 100;
+        position: relative;
+
+    }
+    #contentsecond{
+        width: 500px;
+        height: 200px;
+        padding: 10px;
+        background-color: #f2f6f8;
+        clear: left;
+        border: 1px solid #000000;
+        top: -2px;
+        position: relative;
+        
+    }
+    </style>
+</head>
+<body>
+    <ul id="tabfirst">
+        <li class="tabin">test</li>
+        <li>test</li>
+        <li>test</li>
+    </ul>
+    <div class="content first">divtest1</div>
+    <div class="first">divtest2</div>
+    <div class="first">divtest3</div>
+<br>
+<br>
+<br>
+
+
+    <ul id="tabsecond">
+        <li class="tabin">test1</li cladd="tabin">
+        <li>test2</li>
+        <li>test3</li>
+    </ul>
+    <div id="contentsecond">
+        <div id="realcontent">hhh</div>
+    </div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    
+    $("#tabfirst li").each(function(index){
+        var node =$(this)
+        $(this).mouseover(function(){
+           tid=setTimeout(function(){
+            $("div.content").removeClass("content");
+            $("#tabfirst li.tabin").removeClass("tabin")
+            $("div").eq(index).addClass("content");
+            node.addClass("tabin");
+           },300)
+        }).mouseout(function(){
+            clearTimeout(tid)
+    })
+        
+    })
+
+    $("#realcontent").load("nav3.html")
+    $("#tabsecond li").each(function(index){
+        $(this).click(function(){
+            $("#tabsecond li.tabin").removeClass("tabin")
+            $(this).addClass("tabin")
+            if(index==0){
+                $("#realcontent").load("nav3.html")
+            }else if(index==1){
+                $("#realcontent").load("nav2.html h2")
+            }else if(index==2){
+                $("#realcontent").load("form.html")
+            }
+        })
+    })
+})
+</script>
+</html>
